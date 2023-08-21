@@ -45,7 +45,7 @@ def finish_of_countdown(author_id):
 
 
 if __name__ == '__main__':
-    TG_TOKEN = os.environ['TELEGRAM_TOKEN']
-    bot = ptbot.Bot(TG_TOKEN)
+    tg_token = os.environ['TELEGRAM_TOKEN']
+    bot = ptbot.Bot(tg_token)
     bot.reply_on_message(main)
     bot.run_bot()
