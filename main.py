@@ -3,7 +3,6 @@ import ptbot
 import os
 import random
 from pytimeparse import parse
-import time
 
 
 def render_progressbar(total,
@@ -29,9 +28,7 @@ def notify_progress(secs_left, author_id, message_id, message_time):
 
 def main(chat_id, message_time):
     bot.send_message(chat_id,"Таймер запущен")
-    message_id = bot.send_message(chat_id,
-                                  f"Осталось {parse(message_time)} cекунд\n{render_progressbar(parse(message_time),0)}")
-    time.sleep(1)
+    message_id = bot.send_message(chat_id,"Таймер запущен")
     bot.create_countdown(parse(message_time) - 1,
                          notify_progress,
                          author_id=chat_id,
